@@ -1,0 +1,13 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-content {
+  margin-top: 56px;
+
+  @media (min-width: $app-breakpoint-tablet) {
+    & {
+      margin-top: 64px;
+    }
+  }
+}
