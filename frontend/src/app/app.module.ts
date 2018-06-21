@@ -2,19 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { HeaderComponent } from "./layout/header/header.component";
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, HeaderComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
