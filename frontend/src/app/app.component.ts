@@ -7,7 +7,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Malachite Den';
   @HostBinding('class') componentCssClass;
 
   constructor(public overlayContainer: OverlayContainer) {}
