@@ -49,7 +49,7 @@
 }
 
 // Default colors
-$test-app-primary: mat-palette($mat-teal, 600, 200, 800);
+$test-app-primary: mat-palette($mat-green, 800, 300, 900);
 $test-app-accent: mat-palette($mat-yellow, 600, 200, 800);
 $test-app-warn: mat-palette($mat-deep-orange); /*Default tones: 500, 100, 700*/
 // Default theme
@@ -60,7 +60,7 @@ $test-app-theme: mat-light-theme($test-app-primary, $test-app-accent, $test-app-
 @include generate-menu-item($test-app-theme, 'default');
 
 // Alternate theme 1
-$alt1-primary: mat-palette($mat-green, 800, 300, 900);
+$alt1-primary: mat-palette($mat-teal, 600, 200, 800);
 $alt1-theme: mat-light-theme($alt1-primary, $test-app-accent, $test-app-warn);
 .alt1-theme {
   @include angular-material-theme($alt1-theme);
@@ -69,7 +69,7 @@ $alt1-theme: mat-light-theme($alt1-primary, $test-app-accent, $test-app-warn);
 @include generate-menu-item($alt1-theme, 'alt1');
 
 // Alternate theme 2
-$alt2-theme: mat-dark-theme($alt1-primary, $test-app-accent, $test-app-warn);
+$alt2-theme: mat-dark-theme($test-app-primary, $test-app-accent, $test-app-warn);
 .alt2-theme {
   @include angular-material-theme($alt2-theme);
   @include set-app-theme($alt2-theme);
