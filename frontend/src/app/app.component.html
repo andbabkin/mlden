@@ -1,6 +1,7 @@
+<mden-header (themeSelected)="setTheme($event)" (menuActivated)="sidenav.toggle()"></mden-header>
+
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="push" position="end">
-    <div>Where do we go?</div>
     <mat-nav-list>
       <a mat-list-item href="#" (click)="sidenav.close()">
         Menu item 1
@@ -12,7 +13,6 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mden-header (themeSelected)="setTheme($event)" (menuActivated)="sidenav.open()"></mden-header>
     <div class="app-content">
       <div style="text-align:center">
         <h1>
@@ -33,6 +33,7 @@
         </li>
       </ul>
     </div>
+    <mden-footer></mden-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

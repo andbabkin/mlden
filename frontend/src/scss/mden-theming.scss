@@ -23,7 +23,7 @@
   }
 }
 
-// Mixin to apply theme to themed elements
+// Mixin to apply theme to themed classes
 @mixin set-app-theme($theme) {
   $th-primary: map-get($theme, primary);
   $th-accent: map-get($theme, accent);
@@ -34,7 +34,7 @@
   @include create-themed-classes($th-accent, 'warn');
 }
 
-// Theme selection drop-down menu item mixin
+// Mixin which creates content for an item in the theme selection drop-down menu
 @mixin generate-menu-item($theme, $theme-name){
   #theme-#{$theme-name}-menu-item {
     background-color: map-get(map-get($theme, background), background);
@@ -49,19 +49,27 @@
 }
 
 // Default colors
-$test-app-primary: mat-palette($mat-green, 800, 300, 900);
-$test-app-accent: mat-palette($mat-yellow, 600, 200, 800);
-$test-app-warn: mat-palette($mat-deep-orange); /*Default tones: 500, 100, 700*/
+$mlden-primary: mat-palette($mat-green, 700, 300, 900);
+$mlden-accent: mat-palette($mat-yellow, 600, 200, 800);
+$mlden-warn: mat-palette($mat-deep-orange); /*Default tones: 500, 100, 700*/
 // Default theme
-$test-app-theme: mat-light-theme($test-app-primary, $test-app-accent, $test-app-warn);
+$mlden-theme: mat-light-theme($mlden-primary, $mlden-accent, $mlden-warn);
 // Include theme styles for core and each component used in the app.
-@include angular-material-theme($test-app-theme);
-@include set-app-theme($test-app-theme);
-@include generate-menu-item($test-app-theme, 'default');
+@include angular-material-theme($mlden-theme);
+@include set-app-theme($mlden-theme);
+@include generate-menu-item($mlden-theme, 'default');
+
+// Dark style of default theme
+$mlden-theme-dark: mat-dark-theme($mlden-primary, $mlden-accent, $mlden-warn);
+.dark-theme {
+  @include angular-material-theme($mlden-theme-dark);
+  @include set-app-theme($mlden-theme-dark);
+}
+@include generate-menu-item($mlden-theme-dark, 'dark');
 
 // Alternate theme 1
 $alt1-primary: mat-palette($mat-teal, 600, 200, 800);
-$alt1-theme: mat-light-theme($alt1-primary, $test-app-accent, $test-app-warn);
+$alt1-theme: mat-light-theme($alt1-primary, $mlden-accent, $mlden-warn);
 .alt1-theme {
   @include angular-material-theme($alt1-theme);
   @include set-app-theme($alt1-theme);
@@ -69,19 +77,11 @@ $alt1-theme: mat-light-theme($alt1-primary, $test-app-accent, $test-app-warn);
 @include generate-menu-item($alt1-theme, 'alt1');
 
 // Alternate theme 2
-$alt2-theme: mat-dark-theme($test-app-primary, $test-app-accent, $test-app-warn);
+$alt2-primary: mat-palette($mat-cyan, 700, 200, 900);
+$alt2-accent: mat-palette($mat-light-green, 600, 200, 800);
+$alt2-theme: mat-light-theme($alt2-primary, $alt2-accent, $mlden-warn);
 .alt2-theme {
   @include angular-material-theme($alt2-theme);
   @include set-app-theme($alt2-theme);
 }
 @include generate-menu-item($alt2-theme, 'alt2');
-
-// Alternate theme 3
-$alt3-primary: mat-palette($mat-cyan, 700, 200, 900);
-$alt3-accent: mat-palette($mat-light-green, 600, 200, 800);
-$alt3-theme: mat-light-theme($alt3-primary, $alt3-accent, $test-app-warn);
-.alt3-theme {
-  @include angular-material-theme($alt3-theme);
-  @include set-app-theme($alt3-theme);
-}
-@include generate-menu-item($alt3-theme, 'alt3');

@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'Malachite Den';
-  themes = ['default', 'alt1', 'alt2', 'alt3'];
+  themes = ['default', 'dark', 'alt1', 'alt2'];
   @Output() themeSelected = new EventEmitter<string>();
   @Output() menuActivated = new EventEmitter();
 

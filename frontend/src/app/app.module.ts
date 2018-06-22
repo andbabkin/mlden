@@ -9,10 +9,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { HeaderComponent } from "./layout/header/header.component";
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent
+    AppComponent, HeaderComponent, FooterComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
