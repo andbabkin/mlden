@@ -6,20 +6,25 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
+import { HomeModule } from './home/home.module';
+
+import { AppComponent } from './app.component';
 import { HeaderComponent } from "./layout/header/header.component";
 import { FooterComponent } from './layout/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, FooterComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule,
+    BrowserModule, BrowserAnimationsModule, AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     NgbModule.forRoot(),
-    MaterialModule
+    MaterialModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
