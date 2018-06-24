@@ -9,7 +9,9 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 export class AppComponent {
   @HostBinding('class') componentCssClass;
 
-  constructor(public overlayContainer: OverlayContainer) {}
+  constructor(
+    public overlayContainer: OverlayContainer
+  ) {}
 
   setTheme(theme) {
     this.componentCssClass = theme.toLowerCase() + '-theme';
