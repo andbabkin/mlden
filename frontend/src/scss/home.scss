@@ -1,0 +1,21 @@
+#intro {
+  padding-top: $nav-bar-height;
+  @media (min-width: $app-breakpoint-tablet) {
+    & { padding-top: $nav-bar-height-tablet; }
+  }
+}
+
+#intro-box {
+  max-width: 534px;
+  padding: $default-padding;
+
+  h1 {
+    font-size: 28px;
+    @media (min-width: $app-breakpoint-phone) {
+      & { font-size: 32px; }
+    }
+    @media (min-width: $app-breakpoint-tablet) {
+      & { font-size: 40px; }
+    }
+  }
+}

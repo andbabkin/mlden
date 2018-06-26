@@ -2,7 +2,6 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { fadeInAnimation } from "../../shared/animations";
 
 @Component({
-  selector: 'mden-base',
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.scss'],
   animations: [ fadeInAnimation ],
