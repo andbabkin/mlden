@@ -1,21 +1,64 @@
 #intro {
-  padding-top: $nav-bar-height;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: $nav-bar-height-tablet;
+  background-image: linear-gradient(to top, rgba(255,255,255,0), rgba(112,162,231,0.7));
   @media (min-width: $app-breakpoint-tablet) {
-    & { padding-top: $nav-bar-height-tablet; }
+    & { padding-top: $nav-bar-height; }
+  }
+
+  #intro-logo {
+    margin-top: $nav-bar-height-tablet;
+  }
+
+  #intro-box {
+    max-width: 534px;
+    padding: $default-padding;
+
+    h1 {
+      font-size: 28px;
+      @media (min-width: $app-breakpoint-phone) {
+        & { font-size: 32px; }
+      }
+      @media (min-width: $app-breakpoint-tablet) {
+        & { font-size: 40px; }
+      }
+    }
   }
 }
 
-#intro-box {
-  max-width: 534px;
-  padding: $default-padding;
+#about {
+  .mat-card {
+    padding: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  #about-img {
+    /*padding: 0;*/
+    /*margin: -24px 0 10px 0;
 
-  h1 {
-    font-size: 28px;
-    @media (min-width: $app-breakpoint-phone) {
-      & { font-size: 32px; }
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      & { margin: -24px 0 -24px -24px; }
+    }*/
+
+    img {
+      width: 100%;
+      height: auto;
     }
-    @media (min-width: $app-breakpoint-tablet) {
-      & { font-size: 40px; }
+  }
+  .about-text {
+    padding: 15px 30px 15px 30px;
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      & { padding: 15px 30px 15px 15px;}
+    }
+    @media (min-width: map-get($grid-breakpoints, xl)) {
+      & { font-size: 20px;}
     }
   }
 }
+

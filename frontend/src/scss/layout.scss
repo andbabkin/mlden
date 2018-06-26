@@ -1,19 +1,16 @@
 /* HTML elements styles */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /*margin-top: $body-top-margin-tablet;
-
-  @media (min-width: $app-breakpoint-tablet) {
-    & {
-      margin-top: $body-top-margin;
-    }
-  }*/
 }
 button:active, button:focus {
   outline: 0;
 }
 a:hover {
   text-decoration: none;
+}
+section {
+  display: block;
+  padding: 20px;
 }
 
 /* Special styling */
@@ -32,6 +29,7 @@ a:hover {
   position: absolute;
   width: 100%;
   padding: $default-padding;
+  z-index: 1;
   height: $nav-bar-height-tablet;
   top: $nav-bar-height-tablet;
   @media (min-width: $app-breakpoint-tablet) {
