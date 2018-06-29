@@ -38,7 +38,7 @@
 @mixin generate-menu-item($theme, $theme-name){
   #theme-#{$theme-name}-menu-item {
     background-color: map-get(map-get($theme, background), background);
-    .app-menu-item {
+    .theme-menu-item-img {
       background-image: linear-gradient(
                       to right,
                       mat-color(map-get($theme, primary)),
@@ -46,6 +46,13 @@
       );
     }
   }
+}
+// Styling of an image which illustrates theme in the drop-down menu
+.theme-menu-item-img {
+  display: inline-block;
+  border: 1px solid #333;
+  width: 100%;
+  height: 18px;
 }
 
 // Default colors

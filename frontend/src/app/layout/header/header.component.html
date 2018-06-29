@@ -1,6 +1,9 @@
 <div class="app-bar mat-elevation-z6">
   <mat-toolbar color="primary">
-    <span>{{ title }}</span>
+    <span class="logo">
+      <img src="/assets/icons/icon-72x72.png" alt="Logo">
+    </span>
+    <span class="d-none d-sm-inline">{{ title }}</span>
     <div class="flex-spacer"></div>
     <nav>
       <button mat-button [matMenuTriggerFor]="thmenu" class="app-primary">
@@ -12,10 +15,11 @@
     </nav>
   </mat-toolbar>
 </div>
+
 <mat-menu #thmenu="matMenu">
   <button mat-menu-item *ngFor="let theme of themes"
           [id]="'theme-' + theme + '-menu-item'"
           (click)="onClickTheme(theme)">
-    <span class="app-menu-item"></span>
+    <span class="theme-menu-item-img"></span>
   </button>
 </mat-menu>

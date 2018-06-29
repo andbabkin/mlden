@@ -1,0 +1,18 @@
+/* HTML elements styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+button:active, button:focus {
+  outline: 0;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* Special styling */
+.mac-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+.flex-spacer {
+  flex-grow: 1;
+}

@@ -3,8 +3,7 @@ import { fadeInAnimation } from "../../shared/animations";
 
 @Component({
   templateUrl: './base.component.html',
-  styleUrls: ['./base.component.scss'],
-  animations: [ fadeInAnimation ],
+  animations: [ fadeInAnimation ]
 })
 export class BaseComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;

@@ -1,10 +1,9 @@
-<div class="app-bg app-primary"></div>
-
-<mden-header (themeSelected)="setTheme($event)" (menuActivated)="sidenav.toggle()"></mden-header>
-
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="push" position="end">
-    <mat-nav-list>
+    <div class="logo">
+      <img src="/assets/icons/icon-72x72.png" alt="Logo">
+    </div>
+    <mat-nav-list id="app-menu">
       <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="sidenav.close()">
         Home
       </a>
@@ -15,13 +14,13 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <div class="app-content">
-      <div class="top-panel app-primary">
-        <span>Home</span>
+    <mden-header (themeSelected)="setTheme($event)" (menuActivated)="sidenav.toggle()"></mden-header>
+    <div class="wrapper">
+      <div id="top" class="app-content">
+        <router-outlet></router-outlet>
       </div>
-      <router-outlet></router-outlet>
+      <mden-footer></mden-footer>
     </div>
-    <mden-footer></mden-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

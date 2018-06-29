@@ -1,0 +1,15 @@
+mat-sidenav {
+  width: 150px;
+
+  .logo {
+    text-align: center;
+  }
+
+  #app-menu {
+    .active {
+      font-weight: bold;
+    }
+  }
+}
+
+
