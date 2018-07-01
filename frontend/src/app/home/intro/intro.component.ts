@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from "../../core/content.service";
 
 @Component({
   selector: 'mden-intro',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public content: ContentService
+  ) { }
 
   ngOnInit() {
   }

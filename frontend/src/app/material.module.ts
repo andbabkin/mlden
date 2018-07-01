@@ -6,6 +6,7 @@ import { MatCardModule } from "@angular/material";
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -16,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatListModule,
     MatMenuModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
     MatToolbarModule
   ],
@@ -26,6 +28,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatMenuModule,
     MatListModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
     MatToolbarModule
   ]

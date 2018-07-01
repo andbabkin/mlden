@@ -1,4 +1,7 @@
-<mat-sidenav-container>
+<div class="page-spinner-container" *ngIf="!content.isLoaded()">
+  <mat-spinner></mat-spinner>
+</div>
+<mat-sidenav-container *ngIf="content.isLoaded()">
   <mat-sidenav #sidenav mode="push" position="end">
     <div class="logo">
       <img src="/assets/icons/icon-72x72.png" alt="Logo">
