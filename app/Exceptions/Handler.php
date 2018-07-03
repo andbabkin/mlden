@@ -28,14 +28,15 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param  \Exception  $exception
-     * @return void
-     */
+  /**
+   * Report or log an exception.
+   *
+   * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
+   *
+   * @param  \Exception $exception
+   * @return void
+   * @throws Exception
+   */
     public function report(Exception $exception)
     {
         parent::report($exception);
@@ -54,10 +55,10 @@ class Handler extends ExceptionHandler
             $exception = new NotFoundHttpException($exception->getMessage(), $exception);
         }
         if($exception instanceof NotFoundHttpException){
-            if ($request->ajax()) {
-                return response()->json(['error' => 'Not found'], 404);
-            }
-            return response()->view('index');
+            if ($request->wantsJson()) {
+                return response()->json(['error' => 'No API route for this request'], 404);
+            } else
+              return response()->view('index');
         } else
             return parent::render($request, $exception);
     }

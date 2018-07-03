@@ -31,7 +31,7 @@
 
   @include create-themed-classes($th-primary, 'primary');
   @include create-themed-classes($th-accent, 'accent');
-  @include create-themed-classes($th-accent, 'warn');
+  @include create-themed-classes($th-warn, 'warn');
 }
 
 // Mixin which creates content for an item in the theme selection drop-down menu
