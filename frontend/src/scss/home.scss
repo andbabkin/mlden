@@ -12,12 +12,23 @@
   #intro {
     position: relative;
     width: 100%;
-    min-height: calc(100vh - 112px);
+    min-height: calc(100vh - 56px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to top, rgba(112,162,231,0), rgba(112,162,231,0.7));
+
+    .top-panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: $default-padding;
+
+      a {
+        margin-right: 10px;
+      }
+    }
 
     #intro-box {
       max-width: 534px;

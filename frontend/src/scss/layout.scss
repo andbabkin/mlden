@@ -43,16 +43,6 @@ mat-sidenav-container {
     .app-content {
       position: relative;
       flex: 1 0 auto;
-
-      .top-panel {
-        padding: $default-padding;
-        height: $nav-bar-height-tablet;
-        @media (min-width: $app-breakpoint-tablet) {
-          & {
-            height: $nav-bar-height;
-          }
-        }
-      }
     }
 
     .footer {

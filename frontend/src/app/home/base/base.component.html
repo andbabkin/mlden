@@ -1,12 +1,20 @@
 <div id="home">
-  <div class="top-panel app-primary">
-    <span>Home</span>
-  </div>
   <section id="intro">
+    <div class="top-panel">
+      <a href="/home#about" mat-mini-fab>
+        <mat-icon>face</mat-icon>
+      </a>
+      <a href="/home#contact" mat-mini-fab>
+        <mat-icon>mail_outline</mat-icon>
+      </a>
+    </div>
     <mden-intro></mden-intro>
   </section>
   <section id="about">
     <mden-about></mden-about>
+  </section>
+  <section id="contact">
+    <mden-contact></mden-contact>
   </section>
 </div>
 
