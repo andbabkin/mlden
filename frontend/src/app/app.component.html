@@ -7,7 +7,7 @@
 <mat-sidenav-container *ngIf="content.isLoaded() && !content.isFailed()">
   <mat-sidenav #sidenav mode="push" position="end">
     <div class="logo">
-      <img src="/assets/icons/icon-72x72.png" alt="Logo">
+      <img src="./assets/icons/icon-72x72.png" alt="Logo">
     </div>
     <mat-nav-list id="app-menu">
       <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="sidenav.close()">

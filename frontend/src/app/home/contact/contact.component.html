@@ -4,7 +4,7 @@
     <mat-vertical-stepper [linear]="true">
       <mat-step [stepControl]="nameFormGroup">
         <form [formGroup]="nameFormGroup">
-          <ng-template matStepLabel>Your name<span *ngIf="name && !name.invalid"> ({{ name.value }})</span></ng-template>
+          <ng-template matStepLabel>Your name<span *ngIf="name && !name.invalid">: {{ name.value }}</span></ng-template>
           <mat-form-field>
             <input matInput placeholder="First and last name" formControlName="nameCtrl" required>
           </mat-form-field>
@@ -17,7 +17,7 @@
         <form [formGroup]="emailFormGroup">
           <ng-template matStepLabel>
             Email for response
-            <span *ngIf="email && !email.invalid"> ({{ email.value }})</span>
+            <span *ngIf="email && !email.invalid">: {{ email.value }}</span>
           </ng-template>
           <mat-form-field>
             <input matInput placeholder="Email address" formControlName="emailCtrl" required>
