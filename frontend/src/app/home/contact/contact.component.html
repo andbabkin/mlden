@@ -1,7 +1,27 @@
 <div>
   <mat-card>
+    <div *ngIf="contact.sending" class="absolute-right">
+      <mat-spinner [diameter]="40" [strokeWidth]="1"></mat-spinner>
+    </div>
+
     <h2 class="text-center py-4">Contact Form</h2>
-    <mat-vertical-stepper [linear]="true">
+
+    <div class="alert-danger" *ngIf="contact.failed">
+      <strong>{{ contact.err_msg }}</strong>
+      <div *ngIf="contact.invalid">
+        <ul>
+          <li *ngFor="let k of contact.invalid.keys()">
+            {{ k }} : {{ contact.invalid.errors[k][0] }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert-success" *ngIf="contact.sent">
+      Message is sent. Thank you! Reload this page to write another message.
+    </div>
+
+    <mat-vertical-stepper [linear]="true" *ngIf="showStepper()">
       <mat-step [stepControl]="nameFormGroup">
         <form [formGroup]="nameFormGroup">
           <ng-template matStepLabel>Your name<span *ngIf="name && !name.invalid">: {{ name.value }}</span></ng-template>
@@ -9,7 +29,7 @@
             <input matInput placeholder="First and last name" formControlName="nameCtrl" required>
           </mat-form-field>
           <div>
-            <button mat-button matStepperNext color="primary">Next</button>
+            <button type="button" mat-button matStepperNext color="primary">Next</button>
           </div>
         </form>
       </mat-step>
@@ -23,8 +43,8 @@
             <input matInput placeholder="Email address" formControlName="emailCtrl" required>
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious color="primary">Back</button>
-            <button mat-button matStepperNext color="primary">Next</button>
+            <button type="button" mat-button matStepperPrevious color="primary">Back</button>
+            <button type="button" mat-button matStepperNext color="primary">Next</button>
           </div>
         </form>
       </mat-step>
@@ -37,8 +57,8 @@
                       formControlName="msgCtrl" required></textarea>
           </mat-form-field>
           <div>
-            <button mat-button matStepperPrevious color="primary">Back</button>
-            <button mat-raised-button color="primary"
+            <button type="button" mat-button matStepperPrevious color="primary">Back</button>
+            <button type="button" mat-raised-button color="primary"
                     (click)="send()"
                     [disabled]="!msgExists()">
               Send

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { Observable, of } from "rxjs/index";
 
 import { API_CONTENT } from "./api-routes";
-import {Observable, of} from "rxjs/index";
 
 @Injectable({
   providedIn: 'root'

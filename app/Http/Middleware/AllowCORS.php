@@ -16,6 +16,7 @@ class AllowCORS
     public function handle($request, Closure $next)
     {
         header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
         return $next($request);
     }
 }

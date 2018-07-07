@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
+import { ContactService } from "./contact.service";
+import { ContactMessage } from "./contact-message";
+
 @Component({
   selector: 'mden-contact',
   templateUrl: './contact.component.html'
@@ -12,7 +15,7 @@ export class ContactComponent implements OnInit {
   name: FormControl;
   email: FormControl;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, public contact: ContactService) {}
 
   ngOnInit() {
     this.nameFormGroup = this._formBuilder.group({
@@ -29,10 +32,19 @@ export class ContactComponent implements OnInit {
   }
 
   send() {
-    alert("Message sent!");
+    let c: ContactMessage = {
+      name: this.name.value,
+      email: this.email.value,
+      body: this.msgFormGroup.get('msgCtrl').value
+    };
+    this.contact.send(c);
   }
 
   msgExists(){
     return this.msgFormGroup.get('msgCtrl').value.length > 3;
+  }
+
+  showStepper(): boolean {
+    return !this.contact.sent;
   }
 }

@@ -8,6 +8,7 @@ import { IntroComponent } from './intro/intro.component';
 import { AboutComponent } from './about/about.component';
 import { MaterialModule } from "../material.module";
 import { ContactComponent } from './contact/contact.component';
+import { ContactService } from "./contact/contact.service";
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule
   ],
   declarations: [BaseComponent, IntroComponent, AboutComponent, ContactComponent],
-  providers: [FormBuilder]
+  providers: [FormBuilder, ContactService]
 })
 export class HomeModule { }

@@ -4,7 +4,6 @@
     padding: 20px;
   }
   .mat-card {
-    padding: 0;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -47,6 +46,10 @@
   }
 
   #about {
+    .mat-card {
+      padding: 0;
+    }
+
     #about-img {
       img {
         width: 100%;
@@ -64,6 +67,18 @@
       p {
         text-align: justify;
       }
+    }
+  }
+
+  #contact {
+    mat-card {
+      min-height: 230px;
+    }
+
+    .alert-danger, .alert-success {
+      /*margin: 15px;*/
+      padding: 10px;
+      border-radius: 4px;
     }
   }
 }

@@ -30,3 +30,9 @@ a:hover {
 .full-width {
   width: 100%;
 }
+.absolute-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: $default-padding;
+}
