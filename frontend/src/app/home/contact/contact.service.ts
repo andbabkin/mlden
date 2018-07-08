@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import {Observable, of} from "rxjs/index";
+import { Observable, of } from "rxjs/index";
 
 import { ContactMessage } from "./contact-message";
 import { API_SEND_MSG } from "../../core/api-routes";
@@ -15,45 +15,36 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ContactService {
-  sending: boolean = false;
-  sent: boolean =false;
-  failed: boolean = false;
   invalid: ValidationError;
   err_msg: string;
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Executes POST request sending a message from a visitor to site owner.
+   * @param {ContactMessage} msg
+   * @returns {Observable<any>} it holds an object with boolean property "ok"
+   *    which informs about the success or failure of the operation.
+   */
   send(msg: ContactMessage) {
-    this.sending = true;
-    this.sent = false;
-    this.failed = false;
     this.invalid = null;
-    let response$ = this.http.post(API_SEND_MSG, msg, httpOptions).pipe(
-      catchError(this.handleError('Sending a message'))
+    return this.http.post(API_SEND_MSG, msg, httpOptions).pipe(
+      catchError(this.handleError())
     );
-    response$.subscribe(response => {
-      if(response['ok']){
-        this.sent = true;
-      }
-      this.sending = false;
-    });
   }
 
   /**
    * Handle Http operation that failed.
    * Let the app continue.
-   * @param operation - name of the operation that failed
    */
-  private handleError(operation = 'operation'){
-    return (error: any): Observable<object> => {
+  private handleError(){
+    return (error: any): Observable<any> => {
       if(error.status == 422){
         this.invalid = new ValidationError(error.error);
         this.err_msg = this.invalid.message;
       } else {
         this.err_msg = error.message;
       }
-      this.failed = true;
-      this.sending = false;
       let result = {
         ok: false
       };

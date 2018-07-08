@@ -1,12 +1,12 @@
 <div>
   <mat-card>
-    <div *ngIf="contact.sending" class="absolute-right">
+    <div *ngIf="sending" class="absolute-right">
       <mat-spinner [diameter]="40" [strokeWidth]="1"></mat-spinner>
     </div>
 
     <h2 class="text-center py-4">Contact Form</h2>
 
-    <div class="alert-danger" *ngIf="contact.failed">
+    <div class="alert-danger" *ngIf="failed">
       <strong>{{ contact.err_msg }}</strong>
       <div *ngIf="contact.invalid">
         <ul>
@@ -17,11 +17,11 @@
       </div>
     </div>
 
-    <div class="alert-success" *ngIf="contact.sent">
-      Message is sent. Thank you! Reload this page to write another message.
+    <div class="alert-success" *ngIf="successMessage">
+      {{ successMessage }}
     </div>
 
-    <mat-vertical-stepper [linear]="true" *ngIf="showStepper()">
+    <mat-vertical-stepper [linear]="true">
       <mat-step [stepControl]="nameFormGroup">
         <form [formGroup]="nameFormGroup">
           <ng-template matStepLabel>Your name<span *ngIf="name && !name.invalid">: {{ name.value }}</span></ng-template>
