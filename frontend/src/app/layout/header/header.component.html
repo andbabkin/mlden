@@ -1,12 +1,14 @@
 <div class="app-bar mat-elevation-z6">
   <mat-toolbar color="primary">
-    <a class="logo" routerLink="/home">
+    <a class="logo" routerLink="/home" matTooltip="Home page">
       <img src="./assets/icons/icon-72x72.png" alt="Logo">
     </a>
     <span class="d-none d-sm-inline">{{ title }}</span>
     <div class="flex-spacer"></div>
     <nav>
-      <button mat-button [matMenuTriggerFor]="thmenu" class="app-primary">
+      <button mat-button class="app-primary"
+              [matMenuTriggerFor]="thmenu"
+              matTooltip="Select site color theme">
         <mat-icon class="md-24">format_color_fill</mat-icon>
       </button>
       <!--<button mat-button class="app-primary" (click)="onClickMenu()">
