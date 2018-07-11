@@ -52,6 +52,9 @@ export class ContactComponent implements OnInit {
   }
 
   send() {
+    // Cancel operation if no response yet received
+    if(this.sending) return;
+
     this.sending = true;
     this.sent = false;
     this.failed = false;
@@ -72,7 +75,7 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  msgExists(){
-    return this.msg.value.length > 3;
+  disableSending(){
+    return this.msg.value.length < 3 || this.sending;
   }
 }

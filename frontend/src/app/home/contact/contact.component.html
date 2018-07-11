@@ -60,7 +60,7 @@
             <button type="button" mat-button matStepperPrevious color="primary">Back</button>
             <button type="button" mat-raised-button color="primary"
                     (click)="send()"
-                    [disabled]="!msgExists()">
+                    [disabled]="disableSending()">
               Send
             </button>
           </div>

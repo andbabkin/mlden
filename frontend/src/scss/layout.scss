@@ -46,8 +46,12 @@ mat-sidenav-container {
     }
 
     .footer {
-      text-align: center;
-      padding: 10px 0;
+      padding: 20px;
+
+      .footer-container {
+        max-width: $content-max-width;
+        margin: 0 auto;
+      }
     }
   }
 }

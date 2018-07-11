@@ -21,6 +21,7 @@
       color: mat-color($palette, lighter-contrast);
     }
   }
+  .app-fill-#{$palette-name} { fill: mat-color($palette); }
 }
 
 // Mixin to apply theme to themed classes

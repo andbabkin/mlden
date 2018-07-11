@@ -43,7 +43,8 @@ export class ContactService {
         this.invalid = new ValidationError(error.error);
         this.err_msg = this.invalid.message;
       } else {
-        this.err_msg = error.message;
+        console.error(error.message);
+        this.err_msg = 'Error encountered while sending the message.';
       }
       let result = {
         ok: false

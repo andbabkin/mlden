@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Mail\MessageFromSiteVisitor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,6 +16,15 @@ class ContactController extends Controller
         'body' => 'required',
       ];
       $this->validate($request, $rules);
+
+      // Send email
+      $data = [
+        'subject' => 'Malachite Den site message',
+        'name' => $request->json('name', 'anonymous'),
+        'email' => $request->json('email', 'no email provided'),
+        'body' => $request->json('body', ''),
+      ];
+      \Mail::to(env('APP_MAIL'))->queue(new MessageFromSiteVisitor($data));
 
       return response()->json(['ok'=>true]);
     }
