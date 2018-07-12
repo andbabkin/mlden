@@ -46,11 +46,30 @@ mat-sidenav-container {
     }
 
     .footer {
-      padding: 20px;
+      padding: 30px 20px 20px 20px;
 
       .footer-container {
         max-width: $content-max-width;
         margin: 0 auto;
+      }
+
+      .footer-label {
+        display: inline-block;
+        min-width: 60px;
+      }
+
+      #footer-company-left, #footer-company-right {
+        padding: 0 15px;
+      }
+
+      @media (min-width: map-get($grid-breakpoints, sm)) {
+        #footer-company-left {
+          border-left: 1px solid #ddd;
+          border-right: 1px solid #ddd;
+        }
+        #footer-company-right {
+          border-right: 1px solid #ddd;
+        }
       }
     }
   }

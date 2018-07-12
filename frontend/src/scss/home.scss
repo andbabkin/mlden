@@ -1,7 +1,7 @@
 #home {
   section {
     display: block;
-    padding: 20px;
+    padding: 0 20px 60px 20px;
   }
   .mat-card {
     max-width: $content-max-width;
@@ -58,10 +58,12 @@
     }
 
     .about-text {
+      display: flex;
+      flex-direction: column;
       padding: 20px 20px 10px 20px;
       font-size: 18px;
       @media (min-width: map-get($grid-breakpoints, md)) {
-        & { padding: 20px 20px 10px 5px;}
+        & { padding: 20px 20px 10px 10px;}
       }
 
       p {
@@ -76,7 +78,6 @@
     }
 
     .alert-danger, .alert-success {
-      /*margin: 15px;*/
       padding: 10px;
       border-radius: 4px;
     }
