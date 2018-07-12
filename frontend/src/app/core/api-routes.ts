@@ -1,4 +1,5 @@
-const API_ORIGIN = 'http://localhost/mlden/public/api/';
+//const API_ORIGIN = 'http://localhost/mlden/public/api/'; // dev
+const API_ORIGIN = 'http://malachiteden.com/mlden/public/api/'; // prod
 
 /** Get object with text strings used on the site. */
 export const API_CONTENT = API_ORIGIN + 'content';
