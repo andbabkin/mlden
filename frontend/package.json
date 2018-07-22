@@ -21,7 +21,6 @@
     "@angular/material": "^6.3.3",
     "@angular/platform-browser": "^6.0.9",
     "@angular/platform-browser-dynamic": "^6.0.9",
-    "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.9",
     "@angular/service-worker": "^6.0.9",
     "@ng-bootstrap/ng-bootstrap": "^2.2.0",
