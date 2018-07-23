@@ -6,10 +6,8 @@ import { NgModule } from '@angular/core';
 /** Additional external modules */
 import { HttpClientModule } from "@angular/common/http";
 /*import { NgbModule } from '@ng-bootstrap/ng-bootstrap';*/
-/*import { ServiceWorkerModule } from '@angular/service-worker';*/
 
 /** App base */
-/*import { environment } from '../environments/environment';*/
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 
@@ -30,7 +28,6 @@ import { NotFoundComponent } from './err/not-found/not-found.component';
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
-    /*ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),*/
     /*NgbModule.forRoot(),*/
     HttpClientModule,
     MaterialModule,
