@@ -14,6 +14,7 @@ import { MaterialModule } from './material.module';
 /** Modules */
 import { CoreModule } from "./core/core.module";
 import { HomeModule } from './home/home.module';
+import { PortfolioModule } from "./portfolio/portfolio.module";
 import { SharedModule } from './shared/shared.module';
 
 /** Components */
@@ -34,6 +35,7 @@ import { NotFoundComponent } from './err/not-found/not-found.component';
     CoreModule,
     SharedModule,
     HomeModule,
+    PortfolioModule,
     AppRoutingModule
   ],
   providers: [],

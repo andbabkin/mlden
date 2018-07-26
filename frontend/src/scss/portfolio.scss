@@ -1,0 +1,25 @@
+#projects {
+  section {
+    display: block;
+    padding: 10px;
+
+    @media (min-width: $app-breakpoint-phone) {
+      & { padding: 20px; }
+    }
+  }
+
+  .mat-card {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .screenshot {
+      max-width: 800px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
