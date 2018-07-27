@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/content', 'Api\ContentController@index');
 Route::post('/contact', 'Api\ContactController@message');
+Route::get('/portfolio', 'Api\PortfolioController@index');
