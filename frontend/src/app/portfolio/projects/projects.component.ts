@@ -1,18 +1,16 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import {fadeInAnimation} from "../../shared/animations";
+import { Component, OnInit } from '@angular/core';
+import {PortfolioService} from "../portfolio.service";
 
 @Component({
   selector: 'mden-projects',
   templateUrl: './projects.component.html',
-  animations: [ fadeInAnimation ]
 })
 export class ProjectsComponent implements OnInit {
-  @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display')   display = 'block';
 
-  constructor() { }
+  constructor(public portfolio: PortfolioService) { }
 
   ngOnInit() {
+    this.portfolio.load();
   }
 
 }

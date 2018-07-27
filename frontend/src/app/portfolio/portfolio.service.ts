@@ -3,31 +3,38 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from "rxjs/index";
 
-import { API_CONTENT } from "./api-routes";
+import { API_PORTFOLIO } from "../core/api-routes";
+import { Project } from "./project";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContentService {
+export class PortfolioService {
   error: string = '';
-  private content: any;
+  projects: Project[];
   private loaded: boolean = false;
   private failed: boolean = false;
 
   constructor(private http: HttpClient) { }
 
   load() {
-    let response$ = this.http.get(API_CONTENT).pipe(
-      catchError(this.handleError('Content request', { err:"Request to RestAPI server failed" }))
+    let response$ = this.http.get(API_PORTFOLIO).pipe(
+      catchError(this.handleError('Portfolio request', { err:"Request to RestAPI server failed" }))
     );
     response$.subscribe(content => {
-      this.content = content;
       if(content.hasOwnProperty('err')){
         this.error = content['err'];
+        this.projects = [];
+      } else {
+        this.projects = content as Project[];
       }
       this.setLoaded();
     });
   }
+
+  isLoaded(): boolean { return this.loaded; }
+
+  isFailed(): boolean { return this.failed; }
 
   private setLoaded() {
     this.loaded = true;
@@ -47,17 +54,4 @@ export class ContentService {
       return of(result as T);
     };
   }
-
-  isLoaded(): boolean { return this.loaded; }
-
-  isFailed(): boolean { return this.failed; }
-
-  get(key: string): string {
-    if(this.content.hasOwnProperty(key)){
-      return this.content[key];
-    } else {
-      return `(${key})`;
-    }
-  }
-
 }

@@ -14,12 +14,19 @@
 
     .screenshot {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 15px auto;
 
       img {
         width: 100%;
         height: auto;
       }
     }
+  }
+
+  .alert-danger {
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 15px;
+    border-radius: 5px;
   }
 }

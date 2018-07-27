@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from "../material.module";
 import { ProjectsComponent } from './projects/projects.component';
-import {PortfolioRoutingModule} from "./portfolio-routing.module";
+import { PortfolioRoutingModule } from "./portfolio-routing.module";
+import { PortfolioService } from "./portfolio.service";
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import {PortfolioRoutingModule} from "./portfolio-routing.module";
     MaterialModule,
     PortfolioRoutingModule
   ],
-  declarations: [ProjectsComponent]
+  declarations: [ProjectsComponent],
+  providers: [PortfolioService]
 })
 export class PortfolioModule { }

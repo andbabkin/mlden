@@ -1,19 +1,19 @@
-<div id="projects">
-  <section>
+<div *ngIf="!portfolio.isLoaded()">
+  <mat-spinner></mat-spinner>
+</div>
+<div id="projects" *ngIf="portfolio.isLoaded()">
+  <h1 class="text-center mt-2">Portfolio</h1>
+
+  <div *ngIf="portfolio.isFailed()" class="alert-danger my-4">{{ portfolio.error }}</div>
+
+  <section *ngFor="let p of portfolio.projects">
     <mat-card>
-      <h2 class="text-center">E-commerce web application</h2>
+      <h3 class="text-center">{{ p.title }}</h3>
       <div class="screenshot">
-        <img src="./assets/p_ecommerce.png" alt="Project illustration">
+        <img [src]="'./assets/' + p.img" alt="Project illustration">
       </div>
-      <p>
-        The multilingual application offers services and goods to customers.
-        Along with front-end and back-end development, it was required to create
-        a CMS for this site which, in addition to CRUD operations with site content,
-        includes also inventory, service orders, and purchase orders management functions.
-      </p>
-      <p class="text-info">
-        JavaScript, VueJs, Bootstrap, SASS, Laravel, PHP, MySQL
-      </p>
+      <div [innerHtml]="p.desc"></div>
+      <p class="text-info">{{ p.stack }}</p>
     </mat-card>
   </section>
 </div>

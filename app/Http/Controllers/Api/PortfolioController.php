@@ -69,7 +69,7 @@ SECTION_MC;
       $project = [
         'title' => 'Analytical Tools and Reports created in MS Excel',
         'img' => 'p_excel.png',
-        'stack' => 'MS Excel, VBA, MS Query, Oracle, MSSQL, MySQL'
+        'stack' => 'MS Excel, VBA, MS Query, Oracle, MSSQL'
       ];
       $project['desc'] = <<<SECTION_EXC
       <p>
