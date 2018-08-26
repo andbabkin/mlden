@@ -1,5 +1,5 @@
 //const API_ORIGIN = 'http://localhost/mlden/htdocs/api/'; // dev
-const API_ORIGIN = 'http://malachiteden.dev/api/'; // dev 2
+const API_ORIGIN = 'http://malachiteden.local/api/'; // dev 2
 //const API_ORIGIN = 'http://malachiteden.com/api/'; // prod
 
 /** Get object with text strings used on the site. */
