@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiOrigin: 'http://malachiteden.local/api/',
+  apiOrigin: 'http://malachiteden.local/',
 };
 
 /*
