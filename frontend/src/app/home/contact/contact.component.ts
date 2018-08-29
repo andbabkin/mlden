@@ -44,11 +44,11 @@ export class ContactComponent implements OnInit {
 
     // Success alert preparation
     this.success$.subscribe((message) => this.successMessage = message);
-    this.success$.pipe(
-      debounceTime(3000)
+    /*this.success$.pipe(
+      debounceTime(10000)
     ).subscribe(() => {
       this.successMessage = null;
-    });
+    });*/
   }
 
   send() {
@@ -77,5 +77,10 @@ export class ContactComponent implements OnInit {
 
   disableSending(){
     return this.msg.value.length < 3 || this.sending;
+  }
+
+  resetForm(){
+    this.sent = false;
+    this.successMessage = null;
   }
 }

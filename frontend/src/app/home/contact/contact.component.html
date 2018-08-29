@@ -21,51 +21,56 @@
       {{ successMessage }}
     </div>
 
-    <mat-vertical-stepper [linear]="true">
-      <mat-step [stepControl]="nameFormGroup">
-        <form [formGroup]="nameFormGroup">
-          <ng-template matStepLabel>Your name<span *ngIf="name && !name.invalid">: {{ name.value }}</span></ng-template>
-          <mat-form-field>
-            <input matInput placeholder="First and last name" formControlName="nameCtrl" required>
-          </mat-form-field>
-          <div>
-            <button type="button" mat-button matStepperNext color="primary">Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="emailFormGroup">
-        <form [formGroup]="emailFormGroup">
-          <ng-template matStepLabel>
-            Email for response
-            <span *ngIf="email && !email.invalid">: {{ email.value }}</span>
-          </ng-template>
-          <mat-form-field>
-            <input matInput placeholder="Email address" formControlName="emailCtrl" required>
-          </mat-form-field>
-          <div>
-            <button type="button" mat-button matStepperPrevious color="primary">Back</button>
-            <button type="button" mat-button matStepperNext color="primary">Next</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step>
-        <form [formGroup]="msgFormGroup">
-          <ng-template matStepLabel>Your message</ng-template>
-          <mat-form-field class="full-width">
-            <textarea rows="4" matInput
-                      placeholder="Message text"
-                      formControlName="msgCtrl" required></textarea>
-          </mat-form-field>
-          <div>
-            <button type="button" mat-button matStepperPrevious color="primary">Back</button>
-            <button type="button" mat-raised-button color="primary"
-                    (click)="send()"
-                    [disabled]="disableSending()">
-              Send
-            </button>
-          </div>
-        </form>
-      </mat-step>
-    </mat-vertical-stepper>
+    <div *ngIf="!sent">
+      <mat-vertical-stepper [linear]="true">
+        <mat-step [stepControl]="nameFormGroup">
+          <form [formGroup]="nameFormGroup">
+            <ng-template matStepLabel>Your name<span *ngIf="name && !name.invalid">: {{ name.value }}</span></ng-template>
+            <mat-form-field>
+              <input matInput placeholder="First and last name" formControlName="nameCtrl" required>
+            </mat-form-field>
+            <div>
+              <button type="button" mat-button matStepperNext color="primary">Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="emailFormGroup">
+          <form [formGroup]="emailFormGroup">
+            <ng-template matStepLabel>
+              Email for response
+              <span *ngIf="email && !email.invalid">: {{ email.value }}</span>
+            </ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Email address" formControlName="emailCtrl" required>
+            </mat-form-field>
+            <div>
+              <button type="button" mat-button matStepperPrevious color="primary">Back</button>
+              <button type="button" mat-button matStepperNext color="primary">Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <form [formGroup]="msgFormGroup">
+            <ng-template matStepLabel>Your message</ng-template>
+            <mat-form-field class="full-width">
+              <textarea rows="4" matInput
+                        placeholder="Message text"
+                        formControlName="msgCtrl" required></textarea>
+            </mat-form-field>
+            <div>
+              <button type="button" mat-button matStepperPrevious color="primary">Back</button>
+              <button type="button" mat-raised-button color="primary"
+                      (click)="send()"
+                      [disabled]="disableSending()">
+                Send
+              </button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-vertical-stepper>
+    </div>
+    <div *ngIf="sent" class="text-center p-4">
+      <button type="button" mat-raised-button color="primary" (click)="resetForm()">New message</button>
+    </div>
   </mat-card>
 </div>
