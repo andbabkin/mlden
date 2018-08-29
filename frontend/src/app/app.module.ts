@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 
 /** Modules */
+import { AuthModule } from "./auth/auth.module";
 import { CoreModule } from "./core/core.module";
 import { HomeModule } from './home/home.module';
 import { PortfolioModule } from "./portfolio/portfolio.module";
@@ -32,6 +33,7 @@ import { NotFoundComponent } from './err/not-found/not-found.component';
     /*NgbModule.forRoot(),*/
     HttpClientModule,
     MaterialModule,
+    AuthModule,
     CoreModule,
     SharedModule,
     HomeModule,
