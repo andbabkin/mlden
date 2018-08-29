@@ -1,13 +1,11 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentService } from "./content.service";
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [],
-  providers: [ContentService]
+  declarations: []
 })
 export class CoreModule {
   /* This module should be loaded only once. */

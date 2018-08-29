@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from "../material.module";
 import { ProjectsComponent } from './projects/projects.component';
 import { PortfolioRoutingModule } from "./portfolio-routing.module";
-import { PortfolioService } from "./portfolio.service";
 
 @NgModule({
   imports: [
@@ -12,7 +11,6 @@ import { PortfolioService } from "./portfolio.service";
     MaterialModule,
     PortfolioRoutingModule
   ],
-  declarations: [ProjectsComponent],
-  providers: [PortfolioService]
+  declarations: [ProjectsComponent]
 })
 export class PortfolioModule { }
