@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { BaseComponent } from './base/base.component';
 import { HomeRoutingModule } from "./home-routing.module";
@@ -17,7 +17,6 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [BaseComponent, IntroComponent, AboutComponent, ContactComponent],
-  providers: [FormBuilder]
+  declarations: [BaseComponent, IntroComponent, AboutComponent, ContactComponent]
 })
 export class HomeModule { }

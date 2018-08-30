@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 /** Additional external modules */
 import { HttpClientModule } from "@angular/common/http";
+import { FormBuilder } from "@angular/forms";
 /*import { NgbModule } from '@ng-bootstrap/ng-bootstrap';*/
 
 /** App base */
@@ -40,7 +41,7 @@ import { NotFoundComponent } from './err/not-found/not-found.component';
     PortfolioModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
