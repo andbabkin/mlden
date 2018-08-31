@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { ContentService } from "./core/content.service";
+import { AuthService } from "./auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     public overlayContainer: OverlayContainer,
-    public content: ContentService
+    public content: ContentService,
+    private auth: AuthService
   ) {}
 
   ngOnInit() {
@@ -29,5 +31,13 @@ export class AppComponent implements OnInit {
       classList.remove(...toRemove);
     }
     classList.add(this.componentCssClass);
+  }
+
+  isAuth(): boolean {
+    return this.auth.isLoggedIn();
+  }
+
+  user(): string {
+    return this.auth.getUserName();
   }
 }

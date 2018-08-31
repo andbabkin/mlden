@@ -40,6 +40,13 @@ mat-sidenav-container {
       }
     }
 
+    .user-area {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      z-index: 10;
+    }
+
     .app-content {
       position: relative;
       flex: 1 0 auto;

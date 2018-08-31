@@ -16,12 +16,16 @@
       <a mat-list-item routerLink="/portfolio" routerLinkActive="active" (click)="sidenav.close()">
         Portfolio
       </a>
+      <a *ngIf="isAuth()" mat-list-item routerLink="/login" routerLinkActive="active" (click)="sidenav.close()">
+        Logout
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mden-header (themeSelected)="setTheme($event)" (menuActivated)="sidenav.toggle()"></mden-header>
     <div class="wrapper">
+      <div class="user-area" *ngIf="isAuth()"><small>{{ user() }}</small></div>
       <div id="top" class="app-content">
         <router-outlet></router-outlet>
       </div>

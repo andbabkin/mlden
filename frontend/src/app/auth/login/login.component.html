@@ -1,6 +1,19 @@
 <div class="login">
-  <mat-card>
+  <div class="jumbotron" *ngIf="isIn()">
+    <h1 class="display-4">Hello, {{ user() ? user() : 'User' }}!</h1>
+    <p class="lead">
+      Registered users allowed to change the content of this site. The editing functionality is not implemented yet.
+      So, actually, You don't have any chance to change something here )
+    </p>
+    <hr class="my-4">
+    <p>By logging out You will remove an access token issued for You. You should provide the name and the password to log in again.</p>
+    <p class="lead">
+      <button type="button" mat-raised-button color="primary" (click)="logout()">Log out</button>
+    </p>
+  </div>
+  <mat-card *ngIf="!isIn()">
     <h2 class="text-center">Are you Admin?</h2>
+    <p class="text-danger" *ngIf="err"><small>{{ err }}</small></p>
     <form [formGroup]="loginFormGroup">
       <mat-form-field>
         <input matInput placeholder="Name" formControlName="nameCtrl" required>
@@ -10,7 +23,7 @@
       </mat-form-field>
     </form>
     <div class="p-4 text-center">
-      <button type="button" mat-raised-button color="primary" [disabled]="invalid()">Login</button>
+      <button type="button" mat-raised-button color="primary" [disabled]="invalid()" (click)="login()">Login</button>
     </div>
   </mat-card>
 </div>
