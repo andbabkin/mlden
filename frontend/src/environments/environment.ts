@@ -5,6 +5,10 @@
 export const environment = {
   production: false,
   apiOrigin: 'http://malachiteden.local/',
+  oa_type: 'password',
+  oa_cid: 2,
+  oa_cs: 'KAP1gi5TVrTvk19SU6IJVvryENRVoB9OKtf0eTIi',
+  oa_url: 'http://malachiteden.local/oauth/token',
 };
 
 /*

@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from "rxjs/index";
-import {map, tap} from "rxjs/internal/operators";
+import { map } from "rxjs/internal/operators";
 
-import { authData } from "./passport-config";
 import { ApiResponse } from "./models/api-response";
 import { LoginData } from "./models/login-data";
 import { API_USER } from "../core/api-routes";
 import { AuthUser } from "./models/auth-user";
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -32,15 +32,14 @@ export class AuthService {
 
   authenticate(l: LoginData): Observable<ApiResponse>{
     let data = {
-      grant_type: authData.grant_type,
-      client_id: authData.client_id,
-      client_secret: authData.client_secret,
+      grant_type: environment.oa_type,
+      client_id: environment.oa_cid,
+      client_secret: environment.oa_cs,
       username: l.name,
       password: l.password,
       scope: '*',
     };
-    let url = authData.auth_url;
-    return this.http.post<ApiResponse>(url, data, this.httpOptions(false)).pipe(
+    return this.http.post<ApiResponse>(environment.oa_url, data, this.httpOptions(false)).pipe(
       map(r => { return { data: r, error: '', status: 200}; }),
       catchError(this.handleError())
     );
